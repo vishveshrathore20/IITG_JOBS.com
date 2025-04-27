@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/screens/login_screen.dart';
 import 'package:frontend/services/auth_service.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -166,7 +167,12 @@ class _SignupScreenState extends State<SignupScreen> {
                     height: 50,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF4F46E5),
+                        backgroundColor: const Color.fromARGB(
+                          255,
+                          255,
+                          255,
+                          255,
+                        ),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -190,12 +196,17 @@ class _SignupScreenState extends State<SignupScreen> {
                       const Text("Already have an account?"),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/login');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginScreen(),
+                            ),
+                          );
                         },
                         child: const Text(
                           " Log in",
                           style: TextStyle(
-                            color: Color(0xFF4F46E5),
+                            color: Color.fromARGB(255, 3, 2, 12),
                             fontWeight: FontWeight.bold,
                           ),
                         ),
